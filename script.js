@@ -84,7 +84,7 @@ function displayAlert(inputAlert, message) {
       timeout = setTimeout(() => {
         invalidSubmitMessage.style.visibility = "hidden";
         timeoutActive = false;
-      }, 1000);
+      }, 2000);
     }
   }
 }
@@ -92,11 +92,27 @@ function displayAlert(inputAlert, message) {
 // Submit Btn
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  displayAlert(fullNameAlert, "Name required");
-  displayAlert(phoneNumberAlert, "Phone No. required");
-  displayAlert(emailAlert, "Email required");
-  displayAlert(
-    messageAlert,
-    `Enter ${30 - messageTextarea.value.length} or more characters`
-  );
+  if (
+    !fullNameAlert.firstElementChild ||
+    !phoneNumberAlert.firstElementChild ||
+    !emailAlert.firstElementChild ||
+    !messageAlert.firstElementChild
+  ) {
+    displayAlert(fullNameAlert, "Name required");
+    displayAlert(phoneNumberAlert, "Phone No. required");
+    displayAlert(emailAlert, "Email required");
+    displayAlert(
+      messageAlert,
+      `Enter ${30 - messageTextarea.value.length} or more characters`
+    );
+  } else {
+    fullNameInput.value = ""
+    phoneNumberInput.value = ""
+    emailInput.value = ""
+    messageTextarea.value = ""
+    fullNameAlert.firstElementChild.remove()
+    phoneNumberAlert.firstElementChild.remove()
+    emailAlert.firstElementChild.remove()
+    messageAlert.firstElementChild.remove()
+  }
 });

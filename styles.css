@@ -145,6 +145,7 @@ form textarea {
   position: absolute;
   right: 0;
   color: #bf1029;
+  font-size: 0.8rem;
 }
 
 .message-alert {
