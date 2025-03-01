@@ -22,47 +22,53 @@ function createElement(inputElement) {
 
 // Full name
 fullNameInput.addEventListener("keyup", () => {
-  if (fullNameInput.value.length === 0) {
+  let name = fullNameInput.value;
+  if (name.length === 0) {
     fullNameAlert.textContent = "";
-  } else if (fullNameInput.value.includes(" ")) {
-    createElement(fullNameAlert);
-  } else {
+  } else if (!name.includes(" ")) {
     fullNameAlert.textContent = "Enter full name";
+  } else {
+    createElement(fullNameAlert);
   }
 });
 
 // Phone number
 phoneNumberInput.addEventListener("keyup", () => {
-  if (phoneNumberInput.value.length === 0) {
+  let telNumber = phoneNumberInput.value;
+  if (telNumber.length === 0) {
     phoneNumberAlert.textContent = "";
-  } else if (phoneNumberInput.value.length === 11) {
-    createElement(phoneNumberAlert);
-  } else {
+  } else if (telNumber.length > 0 && !telNumber.match(/^[0-9]\d*$/)) {
+    phoneNumberAlert.textContent = "Only digits please";
+  } else if (telNumber.length !== 11 && telNumber.length !== 0) {
     phoneNumberAlert.textContent = "Enter 11 digit phone No.";
+  } else {
+    createElement(phoneNumberAlert);
   }
 });
 
 // Email
 emailInput.addEventListener("keyup", () => {
-  if (emailInput.value.length === 0) {
+  let email = emailInput.value;
+  if (email.length === 0) {
     emailAlert.textContent = "";
-  } else if (emailInput.value.includes("@")) {
-    createElement(emailAlert);
-  } else {
+  } else if (!email.includes("@")) {
     emailAlert.textContent = "Enter valid email";
+  } else {
+    createElement(emailAlert);
   }
 });
 
 // Message
 messageTextarea.addEventListener("keyup", () => {
-  if (messageTextarea.value.length === 0) {
+  let message = messageTextarea.value;
+  if (message.length === 0) {
     messageAlert.textContent = "";
-  } else if (messageTextarea.value.length >= 30) {
-    createElement(messageAlert);
-  } else {
+  } else if (message.length < 30) {
     messageAlert.textContent = `Enter ${
       30 - messageTextarea.value.length
     } or more characters`;
+  } else {
+    createElement(messageAlert);
   }
 });
 
@@ -106,13 +112,13 @@ submitBtn.addEventListener("click", (e) => {
       `Enter ${30 - messageTextarea.value.length} or more characters`
     );
   } else {
-    fullNameInput.value = ""
-    phoneNumberInput.value = ""
-    emailInput.value = ""
-    messageTextarea.value = ""
-    fullNameAlert.firstElementChild.remove()
-    phoneNumberAlert.firstElementChild.remove()
-    emailAlert.firstElementChild.remove()
-    messageAlert.firstElementChild.remove()
+    fullNameInput.value = "";
+    phoneNumberInput.value = "";
+    emailInput.value = "";
+    messageTextarea.value = "";
+    fullNameAlert.firstElementChild.remove();
+    phoneNumberAlert.firstElementChild.remove();
+    emailAlert.firstElementChild.remove();
+    messageAlert.firstElementChild.remove();
   }
 });
