@@ -51,3 +51,80 @@ select {
   font-size: inherit;
 }
 /* CSS Reset */
+
+/* Body */
+body {
+  background-color: #141a34;
+  font-family: "Montserrat", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Box */
+form {
+  background-color: #fefefe;
+  padding: 3rem 1rem 1rem 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+  width: 30rem;
+  text-align: center;
+}
+
+/* Form Decoration */
+.plane {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  top: 0;
+  background-color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Form Content */
+.full-name,
+.email,
+.phone-number,
+.message {
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+form label {
+  width: 25%;
+}
+
+form input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  padding-block: 0.5rem;
+}
+
+form textarea {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  height: 8rem;
+  border-bottom: 1px solid #000;
+  resize: none;
+}
+
+.submit-btn {
+  background-color: #141a34;
+  color: #fefefe;
+  border: none;
+  border-radius: 5rem;
+  padding: 0.5rem 2rem;
+}
