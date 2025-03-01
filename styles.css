@@ -98,6 +98,11 @@ form {
   margin-bottom: 1rem;
   gap: 1rem;
   align-items: center;
+  position: relative;
+}
+
+.phone-number-input::-webkit-inner-spin-button {
+  appearance: none;
 }
 
 form label {
@@ -127,8 +132,37 @@ form textarea {
   background-color: #141a34;
   color: #fefefe;
   border: none;
-  border-radius: 5rem;
+  border-radius: 0.25rem;
   padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+
+/* Alerts */
+.full-name-alert,
+.phone-number-alert,
+.email-alert,
+.message-alert {
+  position: absolute;
+  right: 0;
+  color: #bf1029;
+}
+
+.message-alert {
+  bottom: 0;
+}
+
+/* Check Btn */
+.check-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3f8f29;
+  color: #fefefe;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  font-size: 0.75rem;
 }
 
 @media screen and (max-width: 30rem) {
@@ -153,7 +187,7 @@ form textarea {
   }
 
   .plane {
-    top: 6.5%;
+    top: 6%;
     width: 3rem;
     height: 3rem;
     font-size: 1.5rem;

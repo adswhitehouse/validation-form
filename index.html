@@ -25,21 +25,25 @@
     </div>
     <div class="full-name">
       <label for="full-name">Full Name</label>
-      <input type="text" placeholder="Enter your name">
+      <input class="jsFullNameInput" type="text" placeholder="Enter your name">
+      <p class="full-name-alert jsFullNameAlert"></p>
     </div>
     <div class="phone-number">
       <label for="phone-number">Phone No.</label>
-      <input type="number" placeholder="123 456 7890">
+      <input class="phone-number-input jsPhoneNumberInput" type="number" placeholder="123 456 7890">
+      <p class="phone-number-alert jsPhoneNumberAlert"></p>
     </div>
     <div class="email">
       <label for="email">Email</label>
-      <input type="text" placeholder="Enter Email">
+      <input class="jsEmailInput" type="email" placeholder="Enter Email">
+      <p class="email-alert jsEmailAlert"></p>
     </div>
     <div class="message">
       <label for="message">Your Message</label>
-      <textarea placeholder="Enter your message"></textarea>
+      <textarea class="jsMessageTextarea" placeholder="Enter your message"></textarea>
+      <p class="message-alert jsMessageAlert"></p>
     </div>
-    <button class="submit-btn">Submit</button>
+    <button class="submit-btn jsSubmitBtn">Submit</button>
   </form>
   <script src="./script.js"></script>
 </body>
