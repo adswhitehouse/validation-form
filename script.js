@@ -25,10 +25,10 @@ function validateName() {
   let name = fullNameInput.value;
   if (name.length === 0) {
     fullNameAlert.textContent = "";
-    return false
+    return false;
   } else if (!name.includes(" ")) {
     fullNameAlert.textContent = "Enter full name";
-    return false
+    return false;
   } else {
     createElement(fullNameAlert);
     return true;
@@ -40,13 +40,13 @@ function validateNumber() {
   let telNumber = phoneNumberInput.value;
   if (telNumber.length === 0) {
     phoneNumberAlert.textContent = "";
-    return false
+    return false;
   } else if (telNumber.length > 0 && !telNumber.match(/^[0-9]\d*$/)) {
     phoneNumberAlert.textContent = "Only digits please";
-    return false
+    return false;
   } else if (telNumber.length !== 11 && telNumber.length !== 0) {
     phoneNumberAlert.textContent = "Enter 11 digit phone No.";
-    return false
+    return false;
   } else {
     createElement(phoneNumberAlert);
     return true;
@@ -58,13 +58,13 @@ function validateEmail() {
   let email = emailInput.value;
   if (email.length === 0) {
     emailAlert.textContent = "";
-    return false
+    return false;
   } else if (!email.includes("@")) {
     emailAlert.textContent = "Enter valid email";
-    return false
+    return false;
   } else {
     createElement(emailAlert);
-    return true
+    return true;
   }
 }
 
@@ -73,15 +73,15 @@ function validateMessage() {
   let message = messageTextarea.value;
   if (message.length === 0) {
     messageAlert.textContent = "";
-    return false
+    return false;
   } else if (message.length < 30) {
     messageAlert.textContent = `Enter ${
       30 - messageTextarea.value.length
     } or more characters`;
-    return false
+    return false;
   } else {
     createElement(messageAlert);
-    return true
+    return true;
   }
 }
 
@@ -105,7 +105,7 @@ messageTextarea.addEventListener("keyup", () => {
   validateMessage();
 });
 
-// Displays appropriate alerts for each input/textarea element upon invalid form submission and sets timeout on a warning message
+// Displays appropriate alerts for each input/textarea element upon invalid form submission and sets timeout on a warning message that refreshes itself every time its activated
 let timeout;
 let timeoutActive = false;
 function displayAlert(inputAlert, message) {
