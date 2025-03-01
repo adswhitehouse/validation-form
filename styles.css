@@ -110,15 +110,17 @@ form input {
   outline: none;
   border-bottom: 1px solid #000;
   padding-block: 0.5rem;
+  min-width: 5rem;
 }
 
 form textarea {
   flex-grow: 1;
   border: none;
   outline: none;
-  height: 8rem;
+  height: 6rem;
   border-bottom: 1px solid #000;
   resize: none;
+  min-width: 5rem;
 }
 
 .submit-btn {
@@ -127,4 +129,33 @@ form textarea {
   border: none;
   border-radius: 5rem;
   padding: 0.5rem 2rem;
+}
+
+@media screen and (max-width: 30rem) {
+  form {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  form label {
+    width: 100%;
+  }
+
+  .full-name,
+  .email,
+  .phone-number,
+  .message {
+    flex-wrap: wrap;
+  }
+
+  .plane {
+    top: 6.5%;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+  }
 }
