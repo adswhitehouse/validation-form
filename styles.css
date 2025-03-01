@@ -64,7 +64,7 @@ body {
 /* Form Box */
 form {
   background-color: #fefefe;
-  padding: 3rem 1rem 1rem 1rem;
+  padding: 3rem 1rem 3rem 1rem;
   border-radius: 0.5rem;
   position: relative;
   width: 30rem;
@@ -74,9 +74,9 @@ form {
 /* Form Decoration */
 .plane {
   position: absolute;
-  width: 4rem;
-  height: 4rem;
-  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.75rem;
   left: 50%;
   bottom: 50%;
   transform: translate(-50%, -50%);
@@ -122,7 +122,7 @@ form textarea {
   flex-grow: 1;
   border: none;
   outline: none;
-  height: 6rem;
+  height: 5rem;
   border-bottom: 1px solid #000;
   resize: none;
   min-width: 5rem;
@@ -165,6 +165,15 @@ form textarea {
   font-size: 0.75rem;
 }
 
+/* Invalid Submit Message */
+.invalid-submit-message {
+  color: #bf1029;
+  position: absolute;
+  bottom: 13px;
+  left: 1rem;
+  visibility: hidden;
+}
+
 @media screen and (max-width: 30rem) {
   form {
     width: 100vw;
@@ -188,8 +197,5 @@ form textarea {
 
   .plane {
     top: 6%;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.5rem;
   }
 }
